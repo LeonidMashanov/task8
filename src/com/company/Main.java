@@ -2,26 +2,21 @@ package com.company;
 
 class Dog {
     private String name;
-
     public Dog(String name) {
 
         this.name = name;
     }
-
     public String getName() {
 
         return name;
     }
-
     public void setName(String name) {
 
         this.name = name;
     }
-
     public void castVote() {
         System.out.println("GAV");
     }
-
     public void giveAPaw(Dog dog) {
         System.out.println("a Dog " + name + " give a paw");
     }
@@ -33,8 +28,6 @@ class Point {
     private int centerY;
     private double pointX2;
     private double pointY2;
-
-
     public Point(double coordinatesX, double coordinatesY) {
         this.coordinatesX = coordinatesX;
         this.coordinatesY = coordinatesY;
@@ -47,15 +40,12 @@ class Point {
     public double getCoordinatesX() {
         return coordinatesX;
     }
-
     public void setCoordinatesX(double coordinatesX) {
         this.coordinatesX = coordinatesX;
     }
-
     public double getCoordinatesY() {
         return coordinatesY;
     }
-
     public void setCoordinatesY(double coordinatesY) {
         this.coordinatesY = coordinatesY;
     }
@@ -81,7 +71,6 @@ class Point {
         this.centerY = 0;
 
     }
-
     public boolean isCenter(Point point) {
         return coordinatesX == centerX && coordinatesY == centerY;
     }
@@ -90,7 +79,6 @@ class Point {
         System.out.println("x= "+coordinatesX+";"+"y= "+coordinatesY+";");
         return;
     }
-
     public double distanceTo(Point point2){
 
         double distance= (double) Math.sqrt((Math.pow(pointX2 - coordinatesX, 2) + Math.pow(pointY2 - coordinatesY, 2)));
@@ -100,7 +88,47 @@ class Point {
         if (coordinatesX == centerX && coordinatesY == centerY) return  true;
         else return false;
     }
+}
+class Circle {
+    private double radius;
+    private double centerX;
+    private double centerY;
 
+    public Circle(double radius, double centerX, double centerY) {
+        this.radius = radius;
+        this.centerX = centerX;
+        this.centerY = centerY;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public double getCenterX() {
+        return centerX;
+    }
+
+    public void setCenterX(double centerX) {
+        this.centerX = centerX;
+    }
+
+    public double getCenterY() {
+        return centerY;
+    }
+
+    public void setCenterY(double centerY) {
+        this.centerY = centerY;
+    }
+
+    public boolean containsPoint(Point p) {
+        double distance = Math.sqrt((Math.pow(p.getCoordinatesX() - centerX, 2) + Math.pow(p.getCoordinatesY() - centerY, 2)));
+        if (distance < radius) return true;
+        else return false;
+    }
 }
 public class Main {
 
