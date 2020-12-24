@@ -133,6 +133,16 @@ class Circle {
 public class Main {
 
     public static void main(String[] args) {
-
+        Point p = new Point(5, 5);
+        System.out.println(p.isCenter());
+        p.show();
+        double d = p.distanceTo(p.point2(5, 6));
+        System.out.println(d);
+        Circle c = new Circle(4, 3, 3);
+        boolean b = c.containsPoint(p);
+        System.out.println(b);
+        Dog dog = new Dog("Luffy");
+        dog.castVote();
+        dog.giveAPaw(dog);
     }
 }
